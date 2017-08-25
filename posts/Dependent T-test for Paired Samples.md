@@ -1,3 +1,11 @@
+
+{
+'title' : ['Dependent T-test for Paired Samples'],
+'slug' : ['Statistics Report'],
+'authors' : ['Waylan Limberg', 'John Doe'],
+'date' : ['2017-08-25'],
+}
+
 # Dependent T-test for Paired Samples
 
 ![](Dependent%20T-test%20for%20Paired%20Samples/F5AA6B82-DB9D-4BB2-97D2-BA7A1D525FF3.png)
