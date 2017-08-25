@@ -25,8 +25,8 @@ SITE_URL = "http://testfield.netlify.com/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 #BASE_URL = "http://testfield.cc/"
-#BLOG_EMAIL = "n.tesla@example.com"
-#BLOG_DESCRIPTION = "This is a demo site for Nikola."  # (translatable)
+BLOG_EMAIL = "n.tesla@example.com"
+BLOG_DESCRIPTION = "活着时的大型试验基地"  # (translatable)
 
 # Nikola is multilingual!
 #
