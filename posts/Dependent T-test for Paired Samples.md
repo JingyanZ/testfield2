@@ -1,12 +1,14 @@
-title:   Test a Perceptual Phenomenon
-slug: test-a-erceptual-phenomenon
-tags: statics, dependent-t-test, paired-sample
-category: Statistics Report
-guid: 01
-description: A Practice of Dependent T-test for Paired Samples
-date: 2017-08-26 00:05:00 UTC+08:00
-base_url: http://www.testfield.cc/
-type: text
+<!--
+.. title: Test a Perceptual Phenomenon
+.. slug: test-a-erceptual-phenomenon
+.. tags: statics, dependent-t-test, paired-sample
+.. category: Statistics Report
+.. guid: 01
+.. description: A Practice of Dependent T-test for Paired Samples
+.. date: 2017-08-26 00:05:00 UTC+08:00
+.. base_url: http://www.testfield.cc/
+.. type: text
+-->
 
 Distribution of time taken in congruent group
 Participants who spent between 12  and 13 are the most.
