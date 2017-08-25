@@ -2,6 +2,7 @@ Title:   Test a Perceptual Phenomenon
 Summary: A Practice of Dependent T-test for Paired Samples
 Authors: Joe
 tag: statics
+date: 2017-08-23 20:00:00 UTC+08:00
 base_url: http://www.testfield.cc/
 
 ![](Dependent%20T-test%20for%20Paired%20Samples/F5AA6B82-DB9D-4BB2-97D2-BA7A1D525FF3.png)
