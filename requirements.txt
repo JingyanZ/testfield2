@@ -21,3 +21,4 @@ requests==2.11.1
 six==1.10.0
 Unidecode==0.4.19
 Yapsy==1.11.223
+webassets==0.12.1
