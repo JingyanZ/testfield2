@@ -21,12 +21,12 @@ BLOG_AUTHOR = "notforfun"  # (translatable)
 BLOG_TITLE = "TestField"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
-SITE_URL = "http://testfield.cc/"
+SITE_URL = "http://testfield.netlify.com/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-# BASE_URL = "http://testfield.cc/"
-BLOG_EMAIL = "n.tesla@example.com"
-BLOG_DESCRIPTION = "This is a demo site for Nikola."  # (translatable)
+#BASE_URL = "http://testfield.cc/"
+#BLOG_EMAIL = "n.tesla@example.com"
+#BLOG_DESCRIPTION = "This is a demo site for Nikola."  # (translatable)
 
 # Nikola is multilingual!
 #
