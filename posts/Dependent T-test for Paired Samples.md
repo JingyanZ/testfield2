@@ -4,7 +4,7 @@ tags: statics, dependent-t-test, paired-sample
 category: Statistics Report
 guid: 01
 description: A Practice of Dependent T-test for Paired Samples
-date: 2017-08-23 20:00:00 UTC+08:00
+date: 2017-08-25 23:59:00 UTC+08:00
 base_url: http://www.testfield.cc/
 type: text
 
