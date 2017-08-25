@@ -10,7 +10,7 @@
 .. type: text
 -->
 
-![](/images/dependent1.png)
+![](/images/dependent1 .png)
 Distribution of time taken in congruent group
 Participants who spent between 12  and 13 are the most.
 
