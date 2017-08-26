@@ -15,25 +15,28 @@
 >  
 >[Dataset](https://drive.google.com/file/d/0B9Yf01UaIbUgQXpYb2NhZ29yX1U/view) from [Udacity](http://www.udacity.com/)
 
+
 ![](/images/dependent1.png)
 
-<center>**Distribution of time taken in congruent group**</center>
+**Distribution of time taken in congruent group**
 
-<center>**Participants who spent between 12  and 13 are the most.**</center>
+**Participants who spent between 12  and 13 are the most.**
+
 
 
 ![](/images/dependent2.png)
 
-<center>**Distribution of time taken in incongruent group**</center>
+**Distribution of time taken in incongruent group**
 
-<center>**Participants who spent between 17 and 18, 20 and 21 are the most.**</center>
+**Participants who spent between 17 and 18, 20 and 21 are the most.**
+
 
 
 ![](/images/dependent3.png)
 
-<center>**Distribution of time taken in both  the congruent group and the  incongruent group.**</center>
+**Distribution of time taken in both  the congruent group and the  incongruent group.**
 
-<center>**Every participant spends more time in the incongruent condition than that in  the congruent group.**</center>
+**Every participant spends more time in the incongruent condition than that in  the congruent group.**
 
 
 
