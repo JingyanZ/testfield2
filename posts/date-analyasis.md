@@ -1,7 +1,7 @@
 # 数据分析入门课程
 <!--
-.. title: 数据分析入门课程
-.. slug: 数据分析入门课程
+.. title: Data Analysis
+.. slug: data-analysis
 .. tags: statics,  data-analysis
 .. category: Statistics
 .. guid: 03
