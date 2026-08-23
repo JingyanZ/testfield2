@@ -146,7 +146,7 @@ THEME = "bootstrap4"
 
 # Primary color of your theme. This will be used to customize your theme and
 # auto-generate related colors in POSTS_SECTION_COLORS. Must be a HEX value.
-THEME_COLOR = '#5670d4'
+THEME_COLOR = '#33513f'
 
 # POSTS and PAGES contains (wildcard, destination, template) tuples.
 # (translatable)
@@ -1231,6 +1231,7 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 # before </head>
 # (translatable)
 # EXTRA_HEAD_DATA = ""
+EXTRA_HEAD_DATA = '<link rel="stylesheet" href="/assets/css/custom.css">'
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
 # (translatable)
