@@ -1,0 +1,106 @@
+## -*- coding: utf-8 -*-
+<%namespace name="helper" file="index_helper.tmpl"/>
+<%namespace name="math" file="math_helper.tmpl"/>
+<%namespace name="comments" file="comments_helper.tmpl"/>
+<%namespace name="pagination" file="pagination_helper.tmpl"/>
+<%namespace name="feeds_translations" file="feeds_translations_helper.tmpl" import="*"/>
+<%inherit file="base.tmpl"/>
+
+<%block name="extra_head">
+    ${parent.extra_head()}
+    % if posts and (permalink == '/' or permalink == '/' + index_file):
+        <link rel="prefetch" href="${posts[0].permalink()}" type="text/html">
+    % endif
+    ${math.math_styles_ifposts(posts)}
+</%block>
+
+<%block name="content">
+<%block name="content_header">
+    ${feeds_translations.translation_link(kind)}
+</%block>
+% if 'main_index' in pagekind:
+    ${front_index_header}
+% endif
+% if page_links:
+    ${pagination.page_navigation(current_page, page_links, prevlink, nextlink, prev_next_links_reversed)}
+% endif
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="postindex">
+    % for post in posts:
+        <article class="h-entry post-${post.meta('type')}" itemscope="itemscope" itemtype="http://schema.org/Article">
+        <header>
+            <h1 class="p-name entry-title"><a href="${post.permalink()}" class="u-url">${post.title()|h}</a></h1>
+            <div class="metadata">
+                <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                % if author_pages_generated and multiple_authors_per_post:
+                    % for author in post.authors():
+                        <a href="${_link('author', author)}">${author|h}</a>
+                    % endfor
+                % elif author_pages_generated:
+                    <a href="${_link('author', post.author())}">${post.author()|h}</a>
+                % else:
+                    ${post.author()|h}
+                % endif
+                </span></p>
+                <p class="dateline">
+                <a href="${post.permalink()}" rel="bookmark">
+                <time class="published dt-published" datetime="${post.formatted_date('webiso')}" itemprop="datePublished" title="${post.formatted_date(date_format)|h}">${post.formatted_date(date_format)|h}</time>
+                % if post.updated and post.updated != post.date:
+                    <span class="updated"> (${messages("updated")}
+                        <time class="dt-updated" datetime="${post.formatted_updated('webiso')}" itemprop="dateUpdated" title="${post.formatted_updated(date_format)|h}">${post.formatted_updated(date_format)|h}</time>)</span>
+                % endif
+                </a>
+                </p>
+                % if not post.meta('nocomments') and site_has_comments:
+                    <p class="commentline">${comments.comment_link(post.permalink(), post._base_path)}
+                % endif
+            </div>
+        </header>
+        %if index_teasers:
+        <div class="p-summary entry-summary">
+        ${post.text(teaser_only=True)}
+        %else:
+        <div class="e-content entry-content">
+        ${post.text(teaser_only=False)}
+        %endif
+        </div>
+        </article>
+    % endfor
+    </div>
+    ${helper.html_pager()}
+  </div>
+
+  <div class="col-md-4">
+    <aside class="site-sidebar">
+      <div class="sidebar-block">
+        <h3>最新文章</h3>
+        <ul class="sidebar-postlist">
+        % for post in posts[:8]:
+          <li>
+            <a href="${post.permalink()}">${post.title()|h}</a>
+            <time datetime="${post.formatted_date('webiso')}">${post.formatted_date(date_format)|h}</time>
+          </li>
+        % endfor
+        </ul>
+      </div>
+
+      <div class="sidebar-block">
+        <h3>分类</h3>
+        <!-- 目前手动维护这份分类列表；分类名/链接需要和文章 front matter 里的
+             .. category: 保持对应。以后分类多了，可以再考虑做成自动生成。 -->
+        <ul class="sidebar-taglist">
+          <li><a href="/categories/travel/">Travel（徒步 / 露营）</a></li>
+          <li><a href="/categories/statistics-report/">Statistics Report</a></li>
+          <li><a href="/categories/statistics/">Statistics</a></li>
+        </ul>
+        <p class="sidebar-more"><a href="/categories/">查看全部分类 →</a></p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+${comments.comment_link_script()}
+${math.math_scripts_ifposts(posts)}
+</%block>

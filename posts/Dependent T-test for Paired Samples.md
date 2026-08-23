@@ -15,6 +15,7 @@
 >  
 >[Dataset](https://drive.google.com/file/d/0B9Yf01UaIbUgQXpYb2NhZ29yX1U/view) from [Udacity](http://www.udacity.com/)
 
+<!-- TEASER_END -->
 
 ![](/images/dependent1.png)
 

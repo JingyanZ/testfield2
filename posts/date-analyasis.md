@@ -15,6 +15,8 @@
 
 2.[推论统计学入门](https://cn.udacity.com/course/intro-to-inferential-statistics--ud201)
 
+<!-- TEASER_END -->
+
 3.[数据分析入门（数据分析使用的工具：pands和numpy，需要有一般的python基础）](https://cn.udacity.com/course/intro-to-data-analysis--ud170)
 
 4.[使用 Tableau 进行数据可视化](https://cn.udacity.com/course/data-visualization-in-tableau--ud1006)

@@ -1,8 +1,13 @@
 /*
  * custom.css — 流浪的小张 personal theme overrides
  * Loaded after the theme's own stylesheet via EXTRA_HEAD_DATA in conf.py.
- * Palette: outdoor/hiking feel — deep forest green + warm sand accent,
- * on a soft warm-white background instead of stark white.
+ *
+ * Direction: stay close to the plain, content-first structure of
+ * danluu.com/jvns.ca (no colored navbar block, no card boxes), but with
+ * two things borrowed from joshwcomeau.com's more personal feel —
+ * (1) more generous spacing/breathing room, (2) small personality
+ * touches (bolder accent color on titles/hover, a small hiking-themed
+ * divider mark, a warmer pull-quote) — without illustration or motion.
  */
 
 :root {
@@ -12,9 +17,10 @@
   --brand-sand-dark: #96502e;
   --page-bg: #faf7f2;
   --text-main: #2b2b28;
-  --text-muted: #6b6a63;
-  --card-bg: #ffffff;
+  --text-muted: #767569;
   --border-soft: #e7e2d8;
+  --quote-bg: #f6f1e9;
+  --measure: 680px;
 }
 
 html, body {
@@ -25,86 +31,205 @@ html, body {
 body {
   font-family: -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB",
     "Microsoft YaHei", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.7;
+  line-height: 1.75;
+  font-size: 16px;
 }
 
 a {
   color: var(--brand-sand-dark);
+  text-decoration: underline;
+  text-decoration-color: var(--border-soft);
+  text-underline-offset: 2px;
 }
 a:hover,
 a:focus {
-  color: var(--brand-green-dark);
+  color: var(--brand-green);
+  text-decoration-color: currentColor;
 }
 
-/* ---------- Navbar ---------- */
+/* ---------- Navbar: plain text header, no color block ---------- */
 .navbar.navbar-inverse {
-  background: var(--brand-green);
-  border-color: var(--brand-green-dark);
+  background: var(--page-bg);
+  border: none;
+  border-bottom: 1px solid var(--border-soft);
+  box-shadow: none;
+  margin-bottom: 48px;
 }
 .navbar.navbar-inverse .navbar-brand,
 .navbar.navbar-inverse #blog-title {
-  color: #fff;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  color: var(--text-main);
+  font-weight: 700;
 }
 .navbar.navbar-inverse .nav > li > a {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--text-muted);
+  text-decoration: none;
 }
 .navbar.navbar-inverse .nav > li > a:hover,
 .navbar.navbar-inverse .nav > li > a:focus {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.08);
+  color: var(--brand-sand-dark);
+  background: none;
+}
+.navbar-toggle .icon-bar {
+  background-color: var(--text-main);
 }
 
-/* ---------- Reading column ---------- */
+/* ---------- Reading column, with more room to breathe ---------- */
 .container {
-  max-width: 900px;
+  max-width: 860px;
 }
 
 article.h-entry {
-  background: var(--card-bg);
-  border: 1px solid var(--border-soft);
-  border-radius: 10px;
-  padding: 28px 32px;
-  margin: 28px 0;
+  max-width: var(--measure);
+  margin: 0 auto 64px;
+  padding: 0;
 }
 
+article.h-entry header {
+  margin-bottom: 32px;
+}
+
+/* ---------- Homepage: excerpt + sidebar layout ---------- */
+/* Only the homepage/index listing uses templates/index.tmpl with a
+   two-column row; single post pages keep the centered narrow column
+   above untouched. Widen the container and let articles fill their
+   (wider) column instead of the fixed --measure. */
+.container:has(.row) {
+  max-width: 1080px;
+}
+.row .col-md-8 article.h-entry {
+  max-width: none;
+  margin: 0 0 56px;
+}
+.row .col-md-8 article.h-entry + article.h-entry {
+  padding-top: 48px;
+}
+/* "Read more" link that Nikola appends to teasers */
+.p-summary.entry-summary p.more a {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.site-sidebar {
+  padding-top: 4px;
+}
+.sidebar-block {
+  margin-bottom: 36px;
+}
+.sidebar-block h3 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-sand-dark);
+  margin-bottom: 14px;
+}
+.sidebar-postlist,
+.sidebar-taglist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sidebar-postlist li {
+  margin-bottom: 14px;
+}
+.sidebar-postlist a,
+.sidebar-taglist a {
+  display: block;
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.sidebar-postlist a:hover,
+.sidebar-taglist a:hover {
+  color: var(--brand-sand-dark);
+}
+.sidebar-postlist time {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  margin-top: 2px;
+}
+.sidebar-taglist li {
+  margin-bottom: 10px;
+}
+.sidebar-more a {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: underline;
+}
+
+@media (max-width: 991px) {
+  .site-sidebar {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border-soft);
+  }
+}
+
+/* A small personal touch instead of a generic title: a thin
+   hiking-themed rule under the title, in the accent color, rather
+   than a plain hairline. */
 article.h-entry .entry-title {
-  font-size: 1.9rem;
+  font-size: 1.85rem;
   line-height: 1.3;
-  margin-bottom: 6px;
+  margin-bottom: 14px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
 }
 article.h-entry .entry-title a {
-  color: var(--brand-green-dark);
+  color: var(--text-main);
+  text-decoration: none;
+}
+article.h-entry .entry-title a:hover {
+  color: var(--brand-green);
+}
+article.h-entry header::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 18px;
+  background: var(--brand-sand);
+  border-radius: 2px;
 }
 
 .metadata {
   color: var(--text-muted);
-  font-size: 0.9rem;
-  margin-bottom: 20px;
+  font-size: 0.85rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 .metadata a {
   color: var(--text-muted);
+  text-decoration: none;
 }
 
 .e-content.entry-content {
   font-size: 1.05rem;
+}
+.e-content.entry-content p {
+  margin-bottom: 1.4em;
 }
 .e-content.entry-content h1,
 .e-content.entry-content h2,
 .e-content.entry-content h3,
 .e-content.entry-content h4 {
   color: var(--brand-green-dark);
-  margin-top: 1.6em;
+  margin-top: 2.2em;
+  margin-bottom: 0.7em;
+  font-weight: 700;
 }
 
+/* Warmer pull-quote treatment — a bit of color back, for personality,
+   distinguishing "quoted source material" from your own writing. */
 .e-content.entry-content blockquote {
-  border-left: 4px solid var(--brand-sand);
-  background: #f6f1e9;
-  padding: 12px 18px;
-  margin: 1.2em 0;
+  border-left: 3px solid var(--brand-sand);
+  background: var(--quote-bg);
+  padding: 14px 20px;
+  margin: 1.8em 0;
   color: var(--text-main);
-  border-radius: 0 6px 6px 0;
+  border-radius: 0 8px 8px 0;
 }
 
 /* ---------- Media & tables always fit the column ---------- */
@@ -113,7 +238,7 @@ article.h-entry .entry-title a {
 .e-content.entry-content iframe {
   max-width: 100%;
   height: auto;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 .e-content.entry-content table {
   max-width: 100%;
@@ -121,18 +246,32 @@ article.h-entry .entry-title a {
   overflow-x: auto;
 }
 
+/* Divider between posts on listing pages: a little hiking-trail mark
+   (⛺) instead of a plain line — the one playful detail on the page. */
+article.h-entry + article.h-entry {
+  position: relative;
+  padding-top: 56px;
+}
+article.h-entry + article.h-entry::before {
+  content: "⛺";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  font-size: 1rem;
+  opacity: 0.6;
+}
+
 /* ---------- Footer ---------- */
 #footer {
   color: var(--text-muted);
   border-top: 1px solid var(--border-soft);
-  padding: 20px 0;
-  margin-top: 40px;
-  font-size: 0.85rem;
+  padding: 24px 0;
+  margin-top: 56px;
+  font-size: 0.8rem;
   text-align: center;
 }
 #footer a {
   color: var(--text-muted);
-  text-decoration: underline;
 }
 
 /* ---------- Mobile ---------- */
@@ -142,21 +281,14 @@ article.h-entry .entry-title a {
     padding-right: 18px;
   }
   article.h-entry {
-    padding: 18px 18px;
-    margin: 16px 0;
-    border-radius: 8px;
+    margin: 0 auto 40px;
   }
   article.h-entry .entry-title {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
   }
-  .e-content.entry-content {
-    font-size: 1rem;
+  .navbar.navbar-inverse {
+    margin-bottom: 32px;
   }
-  .navbar.navbar-inverse .navbar-brand,
-  .navbar.navbar-inverse #blog-title {
-    font-size: 1.1rem;
-  }
-  /* Bigger tap targets in the collapsed mobile menu */
   .navbar.navbar-inverse .nav > li > a {
     padding-top: 12px;
     padding-bottom: 12px;
