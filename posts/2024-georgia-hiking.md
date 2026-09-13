@@ -1,7 +1,7 @@
 <!--
 .. title: 2024 年格鲁吉亚徒步
 .. slug: 2024-georgia-hiking
-.. date: 2026-09-13 20:00:00 UTC+04:00
+.. date: 2026-09-13 10:00:00 UTC+04:00
 .. tags: Georgia, 格鲁吉亚, hiking, 徒步, Kazbegi, Juta
 .. category: Travel
 .. description: 2024 年 8 月格鲁吉亚卡兹别克和 Juta 徒步
