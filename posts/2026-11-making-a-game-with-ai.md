@@ -10,7 +10,7 @@
 
 过去一个月，我利用业余时间做了一款放置类小游戏，名为 **Spice Route Farm（《香路小庄园》）**。我既不是程序员，也不擅长绘画，游戏从策划、美术到代码，几乎都是与 AI 协作完成的。这篇文章记录这段时间的工作方式，以及我如何让几个不同的 AI 各司其职。
 
-网页版可以在这里试玩：[Spice Route Farm](https://claude.ai/artifact/UZ5sr4ZP7KEpxrRC7bmakn)
+网页版可以在这里试玩：[Spice Route Farm](https://farm.testfield.cc/)
 
 <!-- TEASER_END -->
 
